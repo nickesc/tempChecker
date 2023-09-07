@@ -29,9 +29,33 @@ Every 6 minutes, the Feather grabs temperature, humidity and pressure readings f
 
 > Here, you can see the microcontroller set up on top of the mirror in my room. It lives there, where it can sit unbothered long term. The red LED on the board lights up while sending data to Adafruit IO so that I know when a reading is being taken.
 
-It sends those readings to Adafruit IO, which logs them and displays them on a [dashboard](https://io.adafruit.com/nickesc/dashboards/room-environment) that I've customized.
+It sends those readings to Adafruit IO, which logs them and displays them on a [dashboard](https://io.adafruit.com/nickesc/dashboards/room-environment) that I've created.
 
 ![The tempChecker dashboard](docs/dashboard.jpeg)
+
+### Deployment
+
+Deploying the temp checker is very simple. To deploy the code to your own Feather:
+
+1. Clone the repository to your computer:
+```sh
+git clone https://github.com/nickesc/tempChecker.git
+```
+2. Fill out your wifi and Adafruit IO account information in the `settings.toml` file
+```toml
+WIFI_SSID = "XXXXXX"
+WIFI_PASSWORD = "XXXXXX"
+ADAFRUIT_IO_USERNAME = "XXXXXX"
+ADAFRUIT_IO_KEY = "XXXXXX"
+```
+3. [Ensure your Feather is running CircuitPython](https://learn.adafruit.com/adafruit-esp32-s2-feather/circuitpython)
+4. Execute the `deploy.sh` script:
+```sh
+./deploy.sh
+```
+5. Eject the `CIRCUITPYTHON` drive
+6. Find somewhere for the Feather to sit that it will not have to move from
+7. Plug in the Feather and wait for readings to start coming in on Adafruit IO!
 
 -----
 
