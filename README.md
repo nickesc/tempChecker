@@ -1,5 +1,6 @@
 <h3 align="center" >
   <a href="https://github.com/nickesc/tempChecker"><img alt="Source: Github" src="https://img.shields.io/badge/source-github-brightgreen?style=for-the-badge&logo=github&labelColor=%23505050"></a>
+  <a href="https://io.adafruit.com/nickesc/dashboards/room-environment"><img alt="Dashboard: Adafruit IO" src="https://img.shields.io/badge/dashboard-Adafruit%20io-black?style=for-the-badge&logo=adafruit&labelColor=%23505050"></a>
   <br>
   <h3 align="center">
     <code>tempChecker</code>
@@ -15,7 +16,7 @@
 
 `tempChecker` was born out of a curiosity about the temperature in my room. It always seems to be different than the rest of the house, and I wanted to see whether or not I was just imagining it.
 
-So, I set up a small hardware project to track it using a Feather microcontroller running CircuitPython.
+I set up a small hardware project to track it using a Feather microcontroller running CircuitPython. It takes temperature, pressure and humidity readings every few minutes and logs them to Adafruit IO.
 
 ### Requirements:
 - 1x [Adafruit ESP32-S2 Feather - 4 MB Flash + 2 MB PSRAM](https://www.adafruit.com/product/5000)
@@ -27,7 +28,7 @@ Every 6 minutes, the Feather grabs temperature, humidity and pressure readings f
 
 ![The tempChecker sitting on top of my mirror](docs/device.jpeg)
 
-> Here, you can see the microcontroller set up on top of the mirror in my room. It lives there, where it can sit unbothered long term. The red LED on the board lights up while sending data to Adafruit IO so that I know when a reading is being taken.
+> The microcontroller set up on top of a mirror in my room. It lives there, where it can sit unbothered long term. The red LED on the board lights up while sending data to Adafruit IO so that I know when a reading is being taken.
 
 It sends those readings to Adafruit IO, which logs them and displays them on a [dashboard](https://io.adafruit.com/nickesc/dashboards/room-environment) that I've created.
 
@@ -41,7 +42,7 @@ Deploying the temp checker is very simple. To deploy the code to your own Feathe
 ```sh
 git clone https://github.com/nickesc/tempChecker.git
 ```
-2. Fill out your wifi and Adafruit IO account information in the `settings.toml` file
+2. Fill out your wifi and Adafruit IO account information in the `settings.toml` file:
 ```toml
 WIFI_SSID = "XXXXXX"
 WIFI_PASSWORD = "XXXXXX"
