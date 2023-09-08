@@ -36,7 +36,7 @@ It sends those readings to Adafruit IO, which logs them and displays them on a [
 
 ### Deployment
 
-Deploying the temp checker is very simple. To deploy the code to your own Feather:
+Deploying the `tempChecker` is very simple. To deploy the code to your own Feather:
 
 1. Clone the repository to your computer:
 ```sh
